@@ -1,0 +1,297 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+html, body {
+  min-height: 100%;
+}
+
+body {
+  background: linear-gradient(#cddc39, #009688);
+}
+
+li {
+  list-style: none;
+}
+
+
+/* style member component */
+.list-members {
+  background: #ffe501;
+  width: 80%;
+  margin: 4% auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.member {
+  flex-basis: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.member-image {
+  width: 50%;
+  height: 100%;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+}
+
+.member-image img {
+  width: 100%;
+  height: 100%;
+  transition: 1s;
+}
+
+.member-image:hover img {
+  transform: scale(1.1);
+}
+
+.member-info {
+  width: 50%;
+  text-align: center;
+}
+
+.member-info p {
+  margin: 20px 0;
+}
+
+
+/* style social link */
+.social-link .fab {
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  border: 1px solid #000;
+  margin: 0 7px;
+  cursor: pointer;
+  transition: transform .5s;
+}
+
+.social-link .fab:hover {
+  background: #000;
+  color: #ffe501;
+  transform: translateY(-7px);
+}
+
+/* Membuat segitiga */
+.member-image::after {
+  content: '';
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-right: 15px solid #ffe501;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+
+/* Merubah posisi member-image dengan member-info */
+@media screen and (min-width: 771px) {
+  .member:nth-child(4n+3) .member-info,
+  .member:nth-child(4n+4) .member-info {
+    order: 1;
+  }
+  .member:nth-child(4n+3) .member-image,
+  .member:nth-child(4n+4) .member-image {
+    order: 2;
+  }
+
+  /* Merubah posisi sigitiga pada baris genap */
+  .member:nth-child(4n+3) .member-image::after,
+  .member:nth-child(4n+4) .member-image::after {
+    left: 0;
+    right: auto;
+    transform: translateY(-50%) rotateZ(180deg);
+  }
+}
+
+
+/* Mobile Styles */
+@media screen and (max-width: 770px) {
+  .list-members {
+    width: 95%;
+  }
+  .member {
+    flex-basis: 100%;
+    font-size: 14px;
+  }
+  .social-link .fab {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+  }
+
+  .member:nth-child(even) .member-info {
+    order: 1;
+  }
+  .member:nth-child(even) .member-image {
+    order: 2;
+  }
+  
+  /* Merubah posisi sigitiga elemen genap */
+  .member:nth-child(even) .member-image::after {
+    left: 0;
+    right: auto;
+    transform: translateY(-50%) rotateZ(180deg);
+  }
+}
+
+
+@media only screen and (max-width: 630px) {
+nav {
+  margin: 27px auto 0;
+  position: relative;
+  width: 470px;
+  height: 50px;
+  background-color: #34495e;
+  border-radius: 8px;
+  font-size: 0;
+  font-family: sans-serif;
+  background: #2c3e50;
+}
+nav a {
+  line-height: 50px;
+  height: 100%;
+  font-size: 15px;
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+}
+nav .animation {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  z-index: 0;
+  transition: all .5s ease 0s;
+  border-radius: 8px;
+}
+nav a:nth-child(1) {
+  width: 80px;
+}
+nav a:nth-child(2) {
+  width: 90px;
+}
+nav a:nth-child(3) {
+  width: 80px;
+}
+nav a:nth-child(4) {
+  width: 120px;
+}
+nav a:nth-child(5) {
+  width: 100px;
+}
+nav .start-home, nav a:nth-child(1):hover~.animation {
+  width: 80px;
+  left: 0;
+  background-color: #1abc9c;
+}
+nav .start-about, nav a:nth-child(2):hover~.animation {
+  width: 90px;
+  left: 100px;
+  background-color: #e74c3c;
+}
+nav .start-blog, nav a:nth-child(3):hover~.animation {
+  width: 80px;
+  left: 210px;
+  background-color: #3498db;
+}
+nav .start-portefolio, nav a:nth-child(4):hover~.animation {
+  width: 120px;
+  left: 310px;
+  background-color: #9b59b6;
+}
+nav .start-contact, nav a:nth-child(5):hover~.animation {
+  width: 100px;
+  left: 470px;
+  background-color: #e67e22;
+}
+}
+
+
+@media only screen and (max-width: 520px) {
+
+
+nav {
+  margin: 27px auto 0;
+  position: relative;
+  width: 380px;
+  height: 50px;
+  background-color: #34495e;
+  border-radius: 8px;
+  font-size: 0;
+  font-family: sans-serif;
+  background: #2c3e50;
+}
+nav a {
+  line-height: 50px;
+  height: 100%;
+  font-size: 15px;
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+}
+nav .animation {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  z-index: 0;
+  transition: all .5s ease 0s;
+  border-radius: 8px;
+}
+nav a:nth-child(1) {
+  width: 70px;
+}
+nav a:nth-child(2) {
+  width: 75px;
+}
+nav a:nth-child(3) {
+  width: 70px;
+}
+nav a:nth-child(4) {
+  width: 100px;
+}
+nav a:nth-child(5) {
+  width: 60px;
+}
+nav .start-home, nav a:nth-child(1):hover~.animation {
+  width: 70px;
+  left: 0;
+  background-color: #1abc9c;
+}
+nav .start-about, nav a:nth-child(2):hover~.animation {
+  width: 75px;
+  left: 100px;
+  background-color: #e74c3c;
+}
+nav .start-blog, nav a:nth-child(3):hover~.animation {
+  width: 70px;
+  left: 210px;
+  background-color: #3498db;
+}
+nav .start-portefolio, nav a:nth-child(4):hover~.animation {
+  width: 90px;
+  left: 310px;
+  background-color: #9b59b6;
+}
+nav .start-contact, nav a:nth-child(5):hover~.animation {
+  width: 60px;
+  left: 470px;
+  background-color: #e67e22;
+}
+}

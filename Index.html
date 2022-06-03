@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Quantum v1.0 - AFBBS Computer Club Fest</title>
+	<link rel="stylesheet" type="text/css" href="./style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+	<link rel="icon" type="imgage/png" href="./logo.png">
+</head>
+<body>
+	<div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+<div id='title'>
+  <span class="ti1" style="font-weight: 500; letter-spacing:10px;">
+    QUANTUM V1.0
+  </span>
+  <br>
+  <span class="ti2" style="font-size: 22px; font-weight:500; letter-spacing: 4px;">
+    G³ - AFBBS COMPUTER CLUB
+  </span>
+  <p style="color: #1004a4; font-size: 16px; font-weight: 500; letter-spacing: 4px;">26 June - 30 June</p>
+  	<p style="color: #1004a4; font-size: 26px; letter-spacing: 4px;" class="d" id="demo"></p>
+  	
+</div>
+<nav>
+	<a href="./Index.html">Home</a>
+	<a href="./Events.html">Events</a>
+	<a href="./Team.html">Team</a>
+	<a href="https://discord.gg/C6WxCFqnNC">Discord</a>
+	<a href="./Invite.pdf">Invite</a>
+	<div class="animation start-home"></div>
+</nav>
+
+   <script>
+// Set the date we're counting down to
+var countDownDate = new Date("June 26, 2022 00:00:00").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+    
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+    
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  // Output the result in an element with id="demo"
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+    
+  // If the count down is over, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "Please Refresh The Page";
+  }
+}, 1000);
+</script>
+
+</body>
+</html>
