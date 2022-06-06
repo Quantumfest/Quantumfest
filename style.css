@@ -291,3 +291,30 @@ nav .start-contact, a:nth-child(5):hover~.animation {
   font-size: 25px;
 }
 }
+
+.bocs{
+  background-color: black;
+  opacity: 0.7;
+  width: 40%;
+  margin: 0 auto;
+  border-radius: 25px;
+  margin-top: 10%;
+  padding: 5px;
+}
+
+.bocs h1{
+  color: white;
+  font-family: arial;
+  font-size: 40px;
+}
+
+.bocs a{
+  color: white;
+  text-decoration: none;
+  font-family: arial;
+  font-size: 22px;
+}
+
+.bocs a:hover{
+  color: red;
+}
